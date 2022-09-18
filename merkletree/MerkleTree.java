@@ -7,7 +7,7 @@ public class MerkleTree{
      //specify used bigest
     
     private MerkleTree leftTree = null;
-    private MerkleTree RightTree = null;
+    private MerkleTree rightTree = null;
 
     private MerkleTree leftLeaf = null;
     private MerkleTree rightLeaf = null;
@@ -33,6 +33,40 @@ public class MerkleTree{
         this.md = md;
     }
 
+    public void add(final MerkleTree leftTree, final MerkleTree rightTree){
+        this.leftTree = leftTree;
+        this.RightTree = rightTree;
+
+        md.update(leftTree.digest());
+        digest = md.digest(rightTree.digest());
+    }
+
+    public void add(final Leaf leftLeaf, final Leaf rightLeaf){
+        this.leftLeaf = leftLeaf;
+        this.rightLeaf = rightLeaf;
+
+        md.update(digest(leftLeaf));
+        digest = md.digest(digest(rightLeaf));
+    }
+
+    public MerkleTree leftTree(){
+        return (leftTree);
+    }
+
+    public MerkleTree rightTree(){
+        return (rightTree);
+    }
+
+    public Leaf leftLeaf(){
+        return (leftLeaf);
+    }
     
+    public Leaf rightLeaf(){
+        return (rightLeaf);
+    }
+
+    public byte[] digest(){
+        return (digest);
+    }
 
 }
