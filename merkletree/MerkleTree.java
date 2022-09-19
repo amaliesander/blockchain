@@ -35,7 +35,7 @@ public class MerkleTree{
 
     public void add(final MerkleTree leftTree, final MerkleTree rightTree){
         this.leftTree = leftTree;
-        this.RightTree = rightTree;
+        this.rightTree = rightTree;
 
         md.update(leftTree.digest());
         digest = md.digest(rightTree.digest());
