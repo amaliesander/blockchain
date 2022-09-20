@@ -56,9 +56,7 @@ public class TreeBuilder {
         final MerkleTree merkleTree = new MerkleTree(md);
         merkleTree.add(branch1, branch2);
 
-    
-
-
 
     }
+
 }
