@@ -1,0 +1,29 @@
+Running on the development network which was specified in the truffle config.
+It is linked to ganache, where a private blockchain was set up. See attached pictures for the account post testing.
+
+
+Output after running truffle migrate followed by truffle test (looks a bit different than terminal output, but shows that both tests passed)
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+[0m[0m
+[0m  Contract: BankApp[0m
+OUTPUT FROM WITHDRAW TEST:
+Bank Balance: 0
+Bank Balance: 15
+Bank Balance: 5
+  [32m  ✔[0m[90m allows a singular user to withdraw an amount of ether[0m[31m (407ms)[0m
+
+OUTPUT FROM DEPOSIT TEST: 
+Bank Balance: 0
+Bank Balance: 10
+  [32m  ✔[0m[90m allows a singular user to deposit an amount of ether[0m[31m (276ms)[0m
+
+
+[92m [0m[32m 2 passing[0m[90m (731ms)[0m
+
